@@ -921,9 +921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   health: 10
-  playerDefeatedParticle: {fileID: 7529415387618643132, guid: ff22498790773184bacd64e97b143640,
-    type: 3}
-  playerDefeatedSound: {fileID: 8300000, guid: d8cb6375e27f36946927ce341912b0b5, type: 3}
 --- !u!58 &1911753054
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1039,9 +1036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43c77d5eaa7c1749a94964c50eb34c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  particlePlayerDamage: {fileID: 7529415387618643132, guid: ff22498790773184bacd64e97b143640,
+  playerDamagedParticle: {fileID: 3479247440389911529, guid: b9b0a2bfdb91145ad9c4c22de73a2fe9,
     type: 3}
+  playerDefeatedParticle: {fileID: 1657798570406232, guid: ed17dd60f6f4b4944b4490f192c69a5b,
+    type: 3}
+  playerDamageSound: {fileID: 8300000, guid: d8cb6375e27f36946927ce341912b0b5, type: 3}
+  playerDefeatedSound: {fileID: 8300000, guid: 3594661a056546745acd197e13592ecd, type: 3}
 --- !u!82 &1911753059
 AudioSource:
   m_ObjectHideFlags: 0

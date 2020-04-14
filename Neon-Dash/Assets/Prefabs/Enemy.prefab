@@ -124,8 +124,11 @@ MonoBehaviour:
     type: 3}
   particleEnemyDamage: {fileID: 1657798570406232, guid: 816b2e55a22aea04597fe7990ad0d333,
     type: 3}
+  playerDefeatedParticle: {fileID: 1657798570406232, guid: ed17dd60f6f4b4944b4490f192c69a5b,
+    type: 3}
   enemyExploded: {fileID: 8300000, guid: 0b5f438af1556164aa17488df778d3e7, type: 3}
   enemyDeath: {fileID: 8300000, guid: ae30bb4b19b6e12499d66945280c61d7, type: 3}
+  playerDefeatedSound: {fileID: 8300000, guid: 3594661a056546745acd197e13592ecd, type: 3}
 --- !u!212 &8841966803684709269
 SpriteRenderer:
   m_ObjectHideFlags: 0
