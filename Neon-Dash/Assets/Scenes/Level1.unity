@@ -552,7 +552,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c6468177ea6a745b61b0b3dfbe28fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   health: 10
   playerDefeatedParticle: {fileID: 7529415387618643132, guid: ff22498790773184bacd64e97b143640,
     type: 3}
@@ -1728,5 +1728,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 6045873961037569394, guid: c6021314831dd8745ae8ce0f568c933d, type: 3}
-  startTimeBetweenShots: 0.25
+  startTimeBetweenShots: 1
   projectileFired: {fileID: 8300000, guid: d8cb6375e27f36946927ce341912b0b5, type: 3}

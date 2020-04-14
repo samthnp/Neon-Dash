@@ -513,6 +513,7 @@ PlayerSettings:
   ps4UseResolutionFallback: 0
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
+  ps4UseLowGarlicFragmentationMode: 1
   ps4SocialScreenEnabled: 0
   ps4ScriptOptimizationLevel: 0
   ps4Audio3dVirtualSpeakerCount: 14
@@ -648,7 +649,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 8230e14b-990d-4318-a25f-2146000935da
   framebufferDepthMemorylessMode: 0
-  projectName: Space-Shooter-2D
+  projectName: Neon-Dash
   organizationId: gamedevtp
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
