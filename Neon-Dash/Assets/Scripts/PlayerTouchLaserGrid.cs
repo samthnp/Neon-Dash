@@ -45,18 +45,20 @@ public class PlayerTouchLaserGrid : MonoBehaviour
             Instantiate(playerDamagedParticle, position, Quaternion.identity);
             Debug.Log(player.health);
         }
-        
-        
-        
+
+
+
         // load new scene if player dies
-        
-        if (player.health <= 0)
+        if (other.CompareTag("Laser"))
         {
-            var position = transform.position;
-            var particleSpawn = Instantiate(playerDefeatedParticle, position, Quaternion.identity);
-            Instantiate(particleSpawn);
-            AudioSource.PlayClipAtPoint(playerDefeatedSound, position, 0.35f);
-            Invoke("LoadNewScene", 1f);
+            if (player.health <= 0)
+            {
+                var position = transform.position;
+                var particleSpawn = Instantiate(playerDefeatedParticle, position, Quaternion.identity);
+                Instantiate(particleSpawn);
+                AudioSource.PlayClipAtPoint(playerDefeatedSound, position, 0.35f);
+                Invoke("LoadNewScene", 1f);
+            }
         }
     }
 }
