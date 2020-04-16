@@ -16,6 +16,13 @@ public class Player : MonoBehaviour
     public float dashSpeed;
     public float startDashTime;
     private float dashTime;
+
+    public GameObject dashParticle;
+    
+    // audio
+    public AudioClip dashSound;
+    private AudioSource audioSource;
+
     
     // player's Health is 10 by default
     public int health = 10;
@@ -36,7 +43,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && dashTime <= 0)
         {
-            StartCoroutine("DashMove");
+            var position = transform.position;
+            Instantiate(dashParticle, position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(dashSound,position, 0.5f);
+            StartCoroutine(nameof(DashMove));
             dashTime = startDashTime;
         }
 

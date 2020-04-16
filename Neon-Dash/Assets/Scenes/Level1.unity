@@ -893,7 +893,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1911753057}
-  - component: {fileID: 1911753060}
   - component: {fileID: 1911753058}
   - component: {fileID: 1911753053}
   - component: {fileID: 6045873961014038773}
@@ -920,7 +919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c6468177ea6a745b61b0b3dfbe28fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  playerSpeed: 20
+  dashSpeed: 40
+  startDashTime: 1
+  dashParticle: {fileID: 3479247440389911529, guid: b9b0a2bfdb91145ad9c4c22de73a2fe9,
+    type: 3}
+  dashSound: {fileID: 8300000, guid: d8cb6375e27f36946927ce341912b0b5, type: 3}
   health: 10
 --- !u!58 &1911753054
 CircleCollider2D:
@@ -1139,21 +1143,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1911753060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911753052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d87fe5817b349d8989a450563ca75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 10000
-  startDashTime: 2
-  playerDash: {fileID: 1657798570406232, guid: 816b2e55a22aea04597fe7990ad0d333, type: 3}
 --- !u!1001 &2088050981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 2387202943536909567, guid: 05b1482b2bc186241bce93e550e19907,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3597975613365938868, guid: 05b1482b2bc186241bce93e550e19907,
         type: 3}
@@ -1643,7 +1632,7 @@ PrefabInstance:
     - target: {fileID: 4637249231706640987, guid: 05b1482b2bc186241bce93e550e19907,
         type: 3}
       propertyPath: startTimeBetweenSpawns
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4637249231706640987, guid: 05b1482b2bc186241bce93e550e19907,
         type: 3}

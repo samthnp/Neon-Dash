@@ -9,6 +9,7 @@ public class PlayerTouchLaserGrid : MonoBehaviour
     private Transform playerPosition;
 
     private Player player;
+    private GameObject playerGameObject;
 
     // Particle
     public GameObject playerDamagedParticle;
@@ -23,6 +24,9 @@ public class PlayerTouchLaserGrid : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        
         audioSource = GetComponent<AudioSource>();
     }
     
@@ -57,7 +61,8 @@ public class PlayerTouchLaserGrid : MonoBehaviour
                 var particleSpawn = Instantiate(playerDefeatedParticle, position, Quaternion.identity);
                 Instantiate(particleSpawn);
                 AudioSource.PlayClipAtPoint(playerDefeatedSound, position, 0.35f);
-                Invoke("LoadNewScene", 1f);
+                playerGameObject.SetActive(false);
+                Invoke(nameof(LoadNewScene), 1f);
             }
         }
     }

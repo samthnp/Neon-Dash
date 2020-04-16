@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private Transform playerPosition;
 
     private Player player;
+    public GameObject playerGameObject;
 
     public GameObject particlePlayerDamage;
     public GameObject particleEnemyDamage;
@@ -28,6 +29,8 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
 
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+
         audioSource = GetComponent<AudioSource>();
     }
     
@@ -39,7 +42,11 @@ public class Enemy : MonoBehaviour
     
     void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
+        if (playerGameObject != null)
+        {
+            transform.position =
+                Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -75,11 +82,8 @@ public class Enemy : MonoBehaviour
         
         if (player.health <= 0)
         {
-            var position = transform.position;
-            var particleSpawn = Instantiate(playerDefeatedParticle, position, Quaternion.identity);
-            Instantiate(particleSpawn);
-            AudioSource.PlayClipAtPoint(playerDefeatedSound, position, 0.1f);
-            Invoke("LoadNewScene", 0.65f);
+            playerGameObject.SetActive(false);
+            Invoke("LoadNewScene", 0.3f);
         }
     }
 }
